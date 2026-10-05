@@ -1,0 +1,160 @@
+:root {
+  --text: #292524;
+  --muted: #78716c;
+  --bg: #f5f5f4;
+  --card: #ffffff;
+  --border: #e7e5e4;
+  --accent: #059669;
+  --sans: system-ui, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 15px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 22px 40px;
+}
+
+header h1 {
+  margin: 4px 0 2px;
+  font-size: 24px;
+}
+
+.sub {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 24px);
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.stage {
+  min-width: 0;
+}
+
+.panel-card,
+.sidebar > :not(details),
+details {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.panel-card h2 {
+  font-size: 14px;
+  margin: 0 0 10px;
+  color: #44403c;
+}
+
+.sections {
+  margin-top: 16px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.toggle {
+  display: flex;
+  border: 1px solid #d6d3d1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.toggle button {
+  border: 0;
+  background: #f5f5f4;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #57534e;
+}
+
+.toggle button.active {
+  background: #292524;
+  color: white;
+}
+
+.note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 8px 2px 0;
+}
+
+code {
+  font-family: var(--mono);
+  background: #f5f5f4;
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+details {
+  padding: 10px 14px;
+}
+
+details summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: #44403c;
+  user-select: none;
+}
+
+details[open] summary {
+  margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 22px;
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    max-height: none;
+  }
+}
